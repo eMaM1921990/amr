@@ -21,7 +21,7 @@ class Areas(models.Model):
         return self.name
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'areas'
 
 
@@ -35,7 +35,7 @@ class Customers(models.Model):
         return self.name
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'customers'
 
 
@@ -53,7 +53,7 @@ class Invoice(models.Model):
 
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'invoice'
 
 
@@ -64,7 +64,7 @@ class InvoiceLine(models.Model):
 
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'invoice_line'
 
 
@@ -77,5 +77,5 @@ class Items(models.Model):
         return self.name
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'items'
