@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'amr.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 #Database Info
 DB_USER='root'
-DB_PASSWORD='admin'
+DB_PASSWORD='0122308791'
 DB_NAME='mydb'
 DB_HOST='localhost'
 DB_PORT=3306
