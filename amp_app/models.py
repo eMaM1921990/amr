@@ -10,7 +10,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 
-
+MANAGED=True
 
 class Areas(models.Model):
     name = models.CharField(max_length=45, blank=True, null=True)
@@ -21,7 +21,7 @@ class Areas(models.Model):
         return self.name
 
     class Meta:
-        managed = True
+        managed = MANAGED
         db_table = 'areas'
 
 
@@ -35,7 +35,7 @@ class Customers(models.Model):
         return self.name
 
     class Meta:
-        managed = True
+        managed = MANAGED
         db_table = 'customers'
 
 
@@ -46,6 +46,8 @@ class Invoice(models.Model):
     car_number = models.CharField(max_length=45, blank=True, null=True)
     car_owner = models.ForeignKey(Customers, models.DO_NOTHING, db_column='car_owner',related_name='car_owner', blank=True, null=True)
     car_driver = models.CharField(max_length=45, blank=True, null=True)
+    invoice_number=models.CharField(max_length=45)
+    delivery_distnation=models.CharField(max_length=255)
     # created_by = models.ForeignKey(User)
 
     def __unicode__(self):
@@ -53,7 +55,7 @@ class Invoice(models.Model):
 
 
     class Meta:
-        managed = True
+        managed = MANAGED
         db_table = 'invoice'
 
 
@@ -64,7 +66,7 @@ class InvoiceLine(models.Model):
 
 
     class Meta:
-        managed = True
+        managed = MANAGED
         db_table = 'invoice_line'
 
 
@@ -77,5 +79,5 @@ class Items(models.Model):
         return self.name
 
     class Meta:
-        managed = True
+        managed = MANAGED
         db_table = 'items'

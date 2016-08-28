@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'admin_report',  # firstly
+    # 'import_export',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'amp_app',
+    'report_builder',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -64,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -79,7 +84,7 @@ WSGI_APPLICATION = 'amr.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 #Database Info
 DB_USER='root'
-DB_PASSWORD='0122308791'
+DB_PASSWORD='admin'
 DB_NAME='mydb'
 DB_HOST='localhost'
 DB_PORT=3306

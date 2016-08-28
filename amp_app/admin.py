@@ -16,9 +16,9 @@ class InvoiceLineForm(admin.TabularInline):
     max_num=1
 
 class invoice(admin.ModelAdmin):
-    list_display = ['id','invoice_date','area','customer','car_number','car_owner','car_driver','invoiceItem']
+    list_display = ['id','invoice_number','invoice_date','area','customer','car_number','car_owner','car_driver','delivery_distnation','invoiceItem']
     inlines = [InvoiceLineForm,]
-    search_fields = ['invoice_date']
+    search_fields = ['invoice_date','area','customer','car_number','car_owner','car_driver','delivery_distnation','invoiceItem']
 
     def invoiceItem(self,obj):
         return InvoiceLine.objects.get(id=obj.id).item.name
