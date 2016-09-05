@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'amp_app',
-    'report_builder',
+    'explorer',
 ]
 
 MIDDLEWARE_CLASSES = [

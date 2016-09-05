@@ -41,10 +41,10 @@ class Customers(models.Model):
 
 class Invoice(models.Model):
     invoice_date = models.DateTimeField(blank=True, null=True)
-    area = models.ForeignKey(Areas, models.DO_NOTHING, blank=True, null=True)
-    customer = models.ForeignKey(Customers, models.DO_NOTHING, blank=True, null=True,related_name='invoice_customer')
+    area = models.ForeignKey(Areas, models.CASCADE, blank=True, null=True)
+    customer = models.ForeignKey(Customers, models.CASCADE, blank=True, null=True,related_name='invoice_customer')
     car_number = models.CharField(max_length=45, blank=True, null=True)
-    car_owner = models.ForeignKey(Customers, models.DO_NOTHING, db_column='car_owner',related_name='car_owner', blank=True, null=True)
+    car_owner = models.ForeignKey(Customers, models.CASCADE, db_column='car_owner',related_name='car_owner', blank=True, null=True)
     car_driver = models.CharField(max_length=45, blank=True, null=True)
     invoice_number=models.CharField(max_length=45)
     delivery_distnation=models.CharField(max_length=255)
@@ -60,8 +60,8 @@ class Invoice(models.Model):
 
 
 class InvoiceLine(models.Model):
-    invoice = models.ForeignKey(Invoice, models.DO_NOTHING, blank=True, null=True, related_name='line')
-    item = models.ForeignKey('Items', models.DO_NOTHING, blank=True, null=True,related_name='items')
+    invoice = models.ForeignKey(Invoice, models.CASCADE, blank=True, null=True, related_name='line')
+    item = models.ForeignKey('Items', models.CASCADE, blank=True, null=True,related_name='items')
     qantity = models.FloatField(blank=True, null=True)
 
 

@@ -19,6 +19,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^report_builder/', include('report_builder.urls'))
+    url(r'^explorer/', include('explorer.urls')),
+
+    # url(r'^report_builder/', include('report_builder.urls'))
 
 ]
