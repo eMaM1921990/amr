@@ -13,6 +13,6 @@ def get_customer_by_area(request):
         return HttpResponse(serializers.serialize('json', customers))
 
 def home(request):
-    template = "index/html"
+    template = "index.html"
     context = {}
     return render_to_response(template,context,context_instance=RequestContext(request))
