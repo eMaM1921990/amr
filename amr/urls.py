@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from amp_app import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^explorer/', include('explorer.urls')),
+
+    url(r'^api/v1/get_customers/', views.get_customer_by_area, name='get_customer'),
 
     # url(r'^report_builder/', include('report_builder.urls'))
 
