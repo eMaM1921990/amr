@@ -16,7 +16,7 @@ import os
 from os.path import dirname
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.join(dirname(dirname(__file__)), '..')
+# BASE_DIR = os.path.join(dirname(dirname(__file__)), '..')
 
 TEMPLATE_DIR = BASE_DIR + '/templates'
 
@@ -72,9 +72,13 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.debug',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.media',
+                'django.core.context_processors.static',
+                'django.core.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.static',
-                'django.template.context_processors.media',
+                'django.core.context_processors.request',
             ],
         },
     },
@@ -89,12 +93,17 @@ WSGI_APPLICATION = 'amr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 #Database Info
-DB_USER='etqan'
-DB_PASSWORD='azsxdcfv1234'
-DB_NAME='etqan$pertrol'
-DB_HOST='etqan.mysql.pythonanywhere-services.com'
-DB_PORT=3306
+# DB_USER='etqan'
+# DB_PASSWORD='azsxdcfv1234'
+# DB_NAME='etqan$pertrol'
+# DB_HOST='etqan.mysql.pythonanywhere-services.com'
+# DB_PORT=3306
 
+DB_USER='root'
+DB_PASSWORD='admin'
+DB_NAME='mydb'
+DB_HOST='localhost'
+DB_PORT=3306
 
 DATABASES = {
     'default': {
