@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'amr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 #Database Info
-DB_USER='root'
-DB_PASSWORD='admin'
-DB_NAME='mydb'
-DB_HOST='localhost'
+DB_USER='etqan'
+DB_PASSWORD='azsxdcfv1234'
+DB_NAME='etqan$pertrol'
+DB_HOST='etqan.mysql.pythonanywhere-services.com'
 DB_PORT=3306
 
 DATABASES = {
