@@ -13,6 +13,9 @@ def get_customer_by_area(request):
         customers = Customers.objects.filter(areas__id=request.POST['id'], is_customer=True)
         return HttpResponse(serializers.serialize('json', customers))
 
+def get_customer_by_number(request):
+    if request.POST:
+        customer = Customers.objects.filter(account_number=request.POST['account_number'])
 
 def home(request):
     context = {}

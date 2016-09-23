@@ -28,9 +28,11 @@ class InvoiceForm(forms.ModelForm):
     car_owner = forms.ModelChoiceField(queryset=Customers.objects.filter(is_customer=False).order_by('name'),
                                        widget=forms.Select())
 
+    customer_number = forms.CharField(max_length=30, label='Customer No.',widget=forms.TextInput())
+
     class Meta:
         model = Invoice
-        fields = ['invoice_date', 'area', 'customer', 'car_number', 'car_owner', 'car_driver', 'invoice_number',
+        fields = ['invoice_date', 'customer_number', 'area', 'customer', 'car_number', 'car_owner', 'car_driver', 'invoice_number',
                   'delivery_distnation']
 
     class Media:

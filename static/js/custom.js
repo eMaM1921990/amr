@@ -27,3 +27,4 @@ function populateCustomers(json){
         $('#id_customer').append('<option value=' + json[i].pk + '>' + json[i].fields.name + '</option>');
     }
 }
+
