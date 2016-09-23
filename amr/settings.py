@@ -100,7 +100,7 @@ DB_HOST='etqan.mysql.pythonanywhere-services.com'
 DB_PORT=3306
 
 # DB_USER='root'
-# DB_PASSWORD='admin'
+# DB_PASSWORD='0122308791'
 # DB_NAME='mydb'
 # DB_HOST='localhost'
 # DB_PORT=3306

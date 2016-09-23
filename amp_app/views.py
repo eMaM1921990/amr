@@ -18,11 +18,12 @@ def get_customer_by_area(request):
 def get_customer_by_number(request):
     if request.POST:
         customer = Customers.objects.filter(account_number__contains=request.POST['account_number'])
-        print customer.query
-        ret= {
-            "area_id":customer.areas.id,
-            "customer_id": customer.id
-        }
+        ret = {}
+        if customer:
+            ret= {
+                "area_id":customer.areas.id,
+                "customer_id": customer.id
+            }
 
         return HttpResponse(json.dumps(ret, ensure_ascii=False))
 
