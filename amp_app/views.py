@@ -17,7 +17,8 @@ def get_customer_by_area(request):
 @csrf_exempt
 def get_customer_by_number(request):
     if request.POST:
-        customer = Customers.objects.filter(account_number=request.POST['account_number'])
+        customer = Customers.objects.filter(account_number__contains=request.POST['account_number'])
+        print customer.query
         ret= {
             "area_id":customer.areas.id,
             "customer_id": customer.id
