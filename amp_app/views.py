@@ -19,7 +19,7 @@ def get_customer_by_number(request):
     if request.POST:
         customer = Customers.objects.get(account_number=request.POST['account_number'], is_customer=True)
         ret = {}
-        if customer:
+        if customer.exists():
             ret= {
                 "area_id":customer.areas.id,
                 "customer_id": customer.id
