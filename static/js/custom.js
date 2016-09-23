@@ -34,7 +34,7 @@ function get_customer_info(){
         type: 'POST',
         dataType:'JSON',
         data:{
-            customer_number:$('#id_customer_number').val()
+            account_number:$('#id_customer_number').val()
         },
         success: function (responseText) {
             $('#id_area').val(JSON.parse(responseText).area_id);
