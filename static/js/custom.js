@@ -31,7 +31,7 @@ function populateCustomers(json){
 function get_customer_info(){
      $.ajax({
         url: "/api/v1/get_customers_info/",
-        dataType:'JSON',
+        type: 'POST',
         data:{
             account_number:$('#id_customer_number').val()
         },
