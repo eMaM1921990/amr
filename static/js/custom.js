@@ -38,6 +38,8 @@ function get_customer_info(){
         },
         success: function (responseText) {
             console.log(responseText);
+            console.log(JSON.parse(responseText).area_id);
+            console.log(JSON.parse(responseText).customer_id);
             $('#id_area').val(JSON.parse(responseText).area_id);
             $('#id_customer').val(JSON.parse(responseText).customer_id);
         },
