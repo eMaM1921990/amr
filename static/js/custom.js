@@ -28,3 +28,21 @@ function populateCustomers(json){
     }
 }
 
+function get_customer_info(){
+     $.ajax({
+        url: "/api/v1/get_customers_info/",
+        type: 'POST',
+        dataType:'JSON',
+        data:{
+            customer_number:$('#id_customer_number').val()
+        },
+        success: function (responseText) {
+            $('#id_area').val(JSON.parse(responseText).area_id);
+            $('#id_customer').val(JSON.parse(responseText).customer_id);
+        },
+        error: function (xhr, errmsg, err) {
+            console.log(errmsg);
+
+        }
+    });
+}

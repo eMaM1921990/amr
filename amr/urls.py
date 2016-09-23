@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^explorer/', include('explorer.urls')),
 
     url(r'^api/v1/get_customers/', views.get_customer_by_area, name='get_customer'),
+    url(r'^api/v1/get_customers_info/', views.get_customer_by_number, name='get_customer_number'),
 
     # url(r'^report_builder/', include('report_builder.urls'))
 
