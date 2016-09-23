@@ -32,6 +32,7 @@ function get_customer_info(){
      $.ajax({
         url: "/api/v1/get_customers_info/",
         type: 'POST',
+        dataType:'JSON',
         data:{
             account_number:$('#id_customer_number').val()
         },
