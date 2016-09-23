@@ -21,8 +21,8 @@ def get_customer_by_number(request):
         ret = {}
         if customer:
             ret= {
-                # "area_id":customer.areas.id,
-                "customer_id": customer.id
+                "area_id":customer[0].areas.id,
+                "customer_id": customer[0].id
             }
 
         return HttpResponse(json.dumps(ret, ensure_ascii=False))
