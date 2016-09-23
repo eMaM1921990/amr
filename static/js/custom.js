@@ -37,7 +37,7 @@ function get_customer_info(){
             account_number:$('#id_customer_number').val()
         },
         success: function (responseText) {
-            console.log(JSON.parse(responseText));
+            console.log(responseText);
             $('#id_area').val(JSON.parse(responseText).area_id);
             $('#id_customer').val(JSON.parse(responseText).customer_id);
         },
