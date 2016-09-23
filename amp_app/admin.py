@@ -28,7 +28,7 @@ class InvoiceForm(forms.ModelForm):
     car_owner = forms.ModelChoiceField(queryset=Customers.objects.filter(is_customer=False).order_by('name'),
                                        widget=forms.Select())
 
-    customer_number = forms.CharField(max_length=30, label='Customer No.',widget=forms.TextInput(attrs={"onkeyup": 'get_customer_info()'}))
+    customer_number = forms.CharField(max_length=30, label='Customer No.',widget=forms.TextInput(attrs={"onkeypress": 'get_customer_info()'}))
 
     class Meta:
         model = Invoice
